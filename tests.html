@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation Tests</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .pass {
+            color: green;
+            font-weight: bold;
+        }
+
+        .fail {
+            color: red;
+            font-weight: bold;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .test-result {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Student Finance Tracker Tests</h1>
+
+    <p>
+        Open browser developer tools (F12)
+        and check the console for assertion results.
+    </p>
+
+    <div id="results"></div>
+
+    <script type="module">
+
+        import {
+            validateDescription,
+            validateAmount,
+            validateDate,
+            validateCategory,
+            hasDuplicateWords
+        } from "./scripts/validators.js";
+
+        const results =
+            document.getElementById("results");
+
+        function addResult(name, passed) {
+
+            const div =
+                document.createElement("div");
+
+            div.className =
+                "test-result";
+
+            div.innerHTML =
+                `${name}: ` +
+                `<span class="${
+                    passed ? "pass" : "fail"
+                }">` +
+                `${passed ? "PASS" : "FAIL"}` +
+                `</span>`;
+
+            results.appendChild(div);
+        }
+
+        /* =====================
+           DESCRIPTION TESTS
+        ===================== */
+
+        console.assert(
+            validateDescription("Lunch"),
+            "Description should pass"
+        );
+
+        addResult(
+            "Description Valid",
+            validateDescription("Lunch")
+        );
+
+        console.assert(
+            !validateDescription(" Lunch"),
+            "Leading space should fail"
+        );
+
+        addResult(
+            "Description Leading Space",
+            !validateDescription(" Lunch")
+        );
+
+        /* =====================
+           AMOUNT TESTS
+        ===================== */
+
+        console.assert(
+            validateAmount("10.50"),
+            "Amount should pass"
+        );
+
+        addResult(
+            "Amount Valid",
+            validateAmount("10.50")
+        );
+
+        console.assert(
+            !validateAmount("10.555"),
+            "Too many decimals should fail"
+        );
+
+        addResult(
+            "Amount Invalid",
+            !validateAmount("10.555")
+        );
+
+        /* =====================
+           DATE TESTS
+        ===================== */
+
+        console.assert(
+            validateDate("2026-06-18"),
+            "Date should pass"
+        );
+
+        addResult(
+            "Date Valid",
+            validateDate("2026-06-18")
+        );
+
+        console.assert(
+            !validateDate("18/06/2026"),
+            "Wrong date format"
+        );
+
+        addResult(
+            "Date Invalid",
+            !validateDate("18/06/2026")
+        );
+
+        /* =====================
+           CATEGORY TESTS
+        ===================== */
+
+        console.assert(
+            validateCategory("Food"),
+            "Category should pass"
+        );
+
+        addResult(
+            "Category Valid",
+            validateCategory("Food")
+        );
+
+        console.assert(
+            !validateCategory("Food123"),
+            "Numbers should fail"
+        );
+
+        addResult(
+            "Category Invalid",
+            !validateCategory("Food123")
+        );
+
+        /* =====================
+           ADVANCED REGEX TEST
+        ===================== */
+
+        console.assert(
+            hasDuplicateWords("coffee coffee"),
+            "Duplicate words detected"
+        );
+
+        addResult(
+            "Duplicate Word Detection",
+            hasDuplicateWords("coffee coffee")
+        );
+
+        console.assert(
+            !hasDuplicateWords("coffee tea"),
+            "No duplicate words"
+        );
+
+        addResult(
+            "No Duplicate Words",
+            !hasDuplicateWords("coffee tea")
+        );
+
+        console.log(
+            "All validation tests completed."
+        );
+
+    </script>
+
+</body>
+</html>
