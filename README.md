@@ -38,12 +38,6 @@ Uses regular expressions to validate:
 Advanced regex:
 - Detect duplicate words
 
-Example:
-
-```
-coffee coffee
-```
-
 ### Data Persistence
 - Automatically saves data to localStorage
 - Data remains after page refresh
@@ -82,9 +76,6 @@ No frameworks or libraries were used.
 
 ## Project Structure
 
-```text
-student-finance-tracker/
-│
 ├── index.html
 │
 ├── styles/
@@ -101,21 +92,12 @@ student-finance-tracker/
 ├── tests.html
 ├── seed.json
 └── README.md
-```
 
 ---
 
-## Installation
+## How to run
 
-1. Clone the repository:
-
-```bash
-git clone https://github.com/your-username/student-finance-tracker.git
-```
-
-2. Open the project folder in Visual Studio Code.
-
-3. Open `index.html` in your browser or use Live Server.
+1. Open `index.html` in your browser or use Live Server.
 
 ---
 
@@ -128,28 +110,6 @@ git clone https://github.com/your-username/student-finance-tracker.git
 3. Select a category.
 4. Select a date.
 5. Click **Add Expense**.
-
-### Searching
-
-Examples:
-
-Find coffee or tea:
-
-```regex
-(coffee|tea)
-```
-
-Find amounts with cents:
-
-```regex
-\.\d{2}\b
-```
-
-Find duplicate words:
-
-```regex
-\b(\w+)\s+\1\b
-```
 
 ### Sorting
 
@@ -169,10 +129,7 @@ Sort records by:
 ### Importing Data
 
 Use:
-
-```text
 seed.json
-```
 
 or any valid exported JSON file.
 
@@ -186,9 +143,7 @@ Export all records as a JSON file for backup.
 
 Open:
 
-```text
 tests.html
-```
 
 This page tests:
 
