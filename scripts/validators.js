@@ -1,10 +1,3 @@
-// scripts/validators.js
-
-/**
- * Description Validation
- * No leading or trailing spaces
- * Must contain at least one visible character
- */
 export function validateDescription(description) {
 
     const regex = /^\S(?:.*\S)?$/;
@@ -12,10 +5,6 @@ export function validateDescription(description) {
     return regex.test(description);
 }
 
-/**
- * Amount Validation
- * Whole numbers or decimals with up to 2 decimal places
- */
 export function validateAmount(amount) {
 
     const regex =
@@ -24,10 +13,6 @@ export function validateAmount(amount) {
     return regex.test(amount);
 }
 
-/**
- * Date Validation
- * Format: YYYY-MM-DD
- */
 export function validateDate(date) {
 
     const regex =
@@ -36,10 +21,6 @@ export function validateDate(date) {
     return regex.test(date);
 }
 
-/**
- * Category Validation
- * Letters, spaces, and hyphens only
- */
 export function validateCategory(category) {
 
     const regex =
@@ -48,14 +29,6 @@ export function validateCategory(category) {
     return regex.test(category);
 }
 
-/**
- * Advanced Regex Requirement
- * Detect duplicate consecutive words
- *
- * Example:
- * "coffee coffee"
- * "book book"
- */
 export function hasDuplicateWords(text) {
 
     const regex =
@@ -64,17 +37,6 @@ export function hasDuplicateWords(text) {
     return regex.test(text);
 }
 
-/**
- * Clean Description
- * Removes extra spaces between words
- *
- * Example:
- * "Lunch    at    Cafeteria"
- *
- * becomes
- *
- * "Lunch at Cafeteria"
- */
 export function normalizeDescription(text) {
 
     return text
@@ -82,10 +44,6 @@ export function normalizeDescription(text) {
         .replace(/\s+/g, " ");
 }
 
-/**
- * Validate Entire Record
- * Used for JSON import validation if needed
- */
 export function validateRecord(record) {
 
     return (
