@@ -74,27 +74,6 @@ No frameworks or libraries were used.
 
 ---
 
-## Project Structure
-
-├── index.html
-│
-├── styles/
-│   └── style.css
-│
-├── scripts/
-│   ├── app.js
-│   ├── state.js
-│   ├── storage.js
-│   ├── validators.js
-│   ├── search.js
-│   └── ui.js
-│
-├── tests.html
-├── seed.json
-└── README.md
-
----
-
 ## How to run
 
 1. Open `index.html` in your browser or use Live Server.
