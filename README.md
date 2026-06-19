@@ -2,6 +2,9 @@
 
 A responsive web application that helps students manage their finances by tracking expenses, setting budgets, viewing spending statistics, and searching records using regular expressions.
 
+[GITHUB PAGES WEBSITE](https://xinz-ctr.github.io/Summative-Assignment---Building-Responsive-UI/)
+[HERE IS A VIDEO EXPLAINING THE PROJECT](https://drive.google.com/file/d/1g7Dh-wfVjwwpT1FgH5GjpGQwTOBV9Moi/view?usp=sharing)
+
 ## Features
 
 ### Expense Management
@@ -143,4 +146,3 @@ This page tests:
 - Fees
 - Other
 
-[HERE IS A VIDEO EXPLAINING THE PROJECT](https://drive.google.com/file/d/1g7Dh-wfVjwwpT1FgH5GjpGQwTOBV9Moi/view?usp=sharing)
